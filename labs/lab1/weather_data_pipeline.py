@@ -47,9 +47,9 @@ def clean_data(input_file, output_file):
                 if 0 <= temp <= 60 and 0.83 <= wind_speed <= 41.67:  # Wind speed valid range
                     cleaned_data.append(row)
                 else:
-                    print(f"❌ Row removed: {row}")  # Debug print
+                    print(f" Row removed: {row}")  # Debug print
             except ValueError:
-                print(f"⚠️ Invalid data format: {row}")  # Debug print
+                print(f" Invalid data format: {row}")  # Debug print
                 continue  # Skip invalid rows
 
     with open(output_file, 'w', newline='', encoding='utf-8') as file:
@@ -57,7 +57,7 @@ def clean_data(input_file, output_file):
         writer.writerow(headers)
         writer.writerows(cleaned_data)
 
-    print(f"✅ Cleaned Data: {cleaned_data}")  # Debug print
+    print(f" Cleaned Data: {cleaned_data}")  # Debug print
 
 
 ### Summarize Data
@@ -81,12 +81,12 @@ def summarize_data(filename):
         min_temp = min(temperatures)
         avg_wind_speed = sum(wind_speeds) / total_records
 
-        print("📊 Weather Data Summary 📊")
+        print(" Weather Data Summary ")
         print(f"Total Records: {total_records}")
-        print(f"🌡️ Average Temperature: {avg_temp:.2f}°C")
-        print(f"🔥 Max Temperature: {max_temp:.2f}°C")
-        print(f"❄️ Min Temperature: {min_temp:.2f}°C")
-        print(f"💨 Average Wind Speed: {avg_wind_speed:.2f} m/s")
+        print(f" Average Temperature: {avg_temp:.2f}°C")
+        print(f" Max Temperature: {max_temp:.2f}°C")
+        print(f" Min Temperature: {min_temp:.2f}°C")
+        print(f" Average Wind Speed: {avg_wind_speed:.2f} m/s")
 
 ### Main Execution
 if __name__ == "__main__":
